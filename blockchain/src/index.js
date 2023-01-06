@@ -1,17 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function Ineuron() {
+  return (
+    <section className="style">
+      <h1>Book list is</h1>
+      <Image />
+      <Title />
+      <Author />
+    </section>
+  );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const Image = () => {
+  return (
+    <img
+      src="https://m.media-amazon.com/images/I/51NEM-RHlwL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg"
+      alt="Blockchain book"
+    />
+  );
+};
+const Title = () => {
+  return <h2>The basics of Bitcoins and Blockchains</h2>;
+};
+
+const Author = () => {
+  return <h4>Antony</h4>;
+};
+
+ReactDOM.render(<Ineuron />, document.getElementById("root"));
