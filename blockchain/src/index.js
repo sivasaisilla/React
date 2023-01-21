@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
+//creating object for each book
 const BookList1 = {
   Images:
     "https://m.media-amazon.com/images/I/71A-8Cr9cxL._AC_UY436_FMwebp_QL65_.jpg",
@@ -27,6 +28,8 @@ const BookList4 = {
   Author: "Don Tapscott",
 };
 
+//creating a function to render each component
+
 function Ineuron() {
   return (
     <section className="bookList">
@@ -49,13 +52,16 @@ function Ineuron() {
         img={BookList4.Images}
         titl={BookList4.Title}
         author={BookList4.Author}
+        // parent props
       >
         <p>Hello Peeps!</p>
+        {/* CHild prop */}
       </Image>
     </section>
   );
 }
 
+//component for we created and having required manipulations inside it using props
 const Image = (props) => {
   const { img, titl, author, children } = props;
   return (
@@ -68,4 +74,5 @@ const Image = (props) => {
   );
 };
 
+//rendering the file
 ReactDOM.render(<Ineuron />, document.getElementById("root"));
