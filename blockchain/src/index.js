@@ -2,31 +2,70 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
+const BookList1 = {
+  Images:
+    "https://m.media-amazon.com/images/I/71A-8Cr9cxL._AC_UY436_FMwebp_QL65_.jpg",
+  Title: "Blockchain Technology: Concepts and Applications",
+  Author: "Kumar Saurabh and Ashutosh Saxena",
+};
+const BookList2 = {
+  Images:
+    "https://m.media-amazon.com/images/I/61ItRb1o7nL._AC_UY436_FMwebp_QL65_.jpg",
+  Title: "MASTERING BITCOIN 2/ED PROGRAMMING THE OPEN BLOCKCHAIN",
+  Author: "Andreas M. Antonopoulos ",
+};
+const BookList3 = {
+  Images:
+    "https://m.media-amazon.com/images/I/71A-8Cr9cxL._AC_UY436_FMwebp_QL65_.jpg",
+  Title: "Blockchain Technology: Concepts and Applications",
+  Author: "Kumar Saurabh and Ashutosh Saxena",
+};
+const BookList4 = {
+  Images:
+    "https://m.media-amazon.com/images/I/51i0-FJQZjL._AC_UY436_FMwebp_QL65_.jpg",
+  Title: "BLOCKCHAIN",
+  Author: "Don Tapscott",
+};
+
 function Ineuron() {
   return (
-    <section className="style">
-      <h1>Book list is</h1>
-      <Image />
-      <Title />
-      <Author />
+    <section className="bookList">
+      <Image
+        img={BookList1.Images}
+        titl={BookList1.Title}
+        author={BookList1.Author}
+      ></Image>
+      <Image
+        img={BookList2.Images}
+        titl={BookList2.Title}
+        author={BookList2.Author}
+      ></Image>
+      <Image
+        img={BookList3.Images}
+        titl={BookList3.Title}
+        author={BookList3.Author}
+      ></Image>
+      <Image
+        img={BookList4.Images}
+        titl={BookList4.Title}
+        author={BookList4.Author}
+      >
+        <p>Hello Peeps!</p>
+      </Image>
     </section>
   );
 }
 
-const Image = () => {
+const Image = (props) => {
+  const { img, titl, author, children } = props;
   return (
-    <img
-      src="https://m.media-amazon.com/images/I/51NEM-RHlwL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg"
-      alt="Blockchain book"
-    />
+    <div className="book">
+      <img src={img} alt="Image" />
+      <h2>{titl}</h2>
+      <h4>{author}</h4>
+      <h2>{children}</h2>
+    </div>
   );
-};
-const Title = () => {
-  return <h2>The basics of Bitcoins and Blockchains</h2>;
-};
-
-const Author = () => {
-  return <h4>Antony</h4>;
 };
 
 ReactDOM.render(<Ineuron />, document.getElementById("root"));
