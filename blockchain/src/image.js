@@ -8,7 +8,9 @@ const Image = (props) => {
       <img src={Images} alt="" />
       <h2>{Title}</h2>
       <h4>{Author}</h4>
-      <button onClick={clickEvent}>Example</button>
+      <button type="button" onClick={clickEvent}>
+        Example
+      </button>
     </article>
   );
 };
