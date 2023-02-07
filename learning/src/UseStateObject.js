@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const UseStateObject = () => {
   const [person, setPerson] = useState({
@@ -8,7 +8,7 @@ const UseStateObject = () => {
   });
 
   const changeMessage = () => {
-    setPerson({ age: 31 });
+    setPerson({ ...person, age: 31 });
   };
 
   return (
@@ -16,9 +16,11 @@ const UseStateObject = () => {
       <h2>{person.name}</h2>
       <h3>{person.age}</h3>
       <h3>{person.message}</h3>
-      <button className="btn" onClick={change}>
+      <button className="btn" onClick={changeMessage}>
         Change
       </button>
     </>
   );
 };
+
+export default UseStateObject;
