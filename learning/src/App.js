@@ -1,5 +1,5 @@
 import "./index.css";
-import SetUp from "./UseStateCounter";
+import SetUp from "./UseStateArray";
 
 function App() {
   return (
